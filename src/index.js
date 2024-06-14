@@ -8,11 +8,15 @@ import { store } from './app/store'
 import './index.css'
 
 import { worker } from './api/server'
+import { fetchUsers } from './features/users/userSlice'
 
 // Wrap app rendering so we can wait for the mock API to initialize
 async function start() {
   // Start our mock API server
   await worker.start({ onUnhandledRequest: 'bypass' })
+
+  console.log("calling");
+  store.dispatch(fetchUsers())
 
   const root = createRoot(document.getElementById('root'))
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,8 +11,11 @@ import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm'
 import { SinglePostPage } from './features/posts/SinglePostPage'
 import { EditPostForm } from './features/posts/EditPostForm'
+import { useDispatch } from 'react-redux'
+import { fetchUsers } from './features/users/userSlice'
 
 function App() {
+  
   return (
     <Router>
       <Navbar />
