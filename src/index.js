@@ -15,7 +15,6 @@ async function start() {
   // Start our mock API server
   await worker.start({ onUnhandledRequest: 'bypass' })
 
-  console.log("calling");
   store.dispatch(fetchUsers())
 
   const root = createRoot(document.getElementById('root'))
